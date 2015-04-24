@@ -10,18 +10,47 @@
 
     <TextView
         android:id="@+id/brokenTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:text="If you see this, you maybe fixed a bug! Or two."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:layout_below="@+id/brokenTextView"
+        android:id="@+id/url"
+        android:hint="Please enter your link here"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_below="@+id/brokenTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="\n This view doesn't do anything really."
+    <Button
+        android:id="@+id/loadbutton"
+        android:layout_below="@+id/url"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Load"
+        android:onClick="fetchHTML"
+        android:layout_marginBottom="20dp"
+        />
+
+    <ScrollView
+        android:layout_below="@+id/loadbutton"
+        android:id="@+id/textAreaScroller"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_x="0px"
+        android:layout_y="25px"
+        android:scrollbars="vertical">
+        <TextView
+
+            android:id="@+id/result"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp" />
+    </ScrollView>
 
 </RelativeLayout>
